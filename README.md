@@ -1,4 +1,4 @@
-#gartic io drawing assistant, answer assistant and many more features
+# gartic io drawing assistant, answer assistant and many more features
 
 [You need tampermonkey. click to download](https://www.tampermonkey.net "You need tampermonkey. click to download")
 
@@ -6,7 +6,7 @@
 
 **<a href="script/gartic.io mod menu.js" download>Download Script</a>**
 
-##Here are some images
+## Here are some images
 
 <p align="center">
   <img width="460" height="300" src="https://github.com/anonimbiri/gartic.io-hack/blob/main/resimler/1.gif?raw=true">
@@ -20,7 +20,7 @@ This image is a bit old (my first attempts)
   <img width="460" height="300" src="https://github.com/anonimbiri/gartic.io-hack/blob/main/resimler/eski%20versiyon.gif?raw=true">
 </p>
 
-##Features
+## Features
 
 - **Drawing Assistant**
 - **Hint Assistant**
