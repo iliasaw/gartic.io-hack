@@ -5,7 +5,7 @@
 **Now we can download the script**
 
 **<a href="script/gartic.io mod menu.js" download>Download Script</a>**,
-[greasyfork click to download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu)
+[Download From greasyfork](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu)
 
 ## Here are some images
 
