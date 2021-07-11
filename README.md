@@ -9,15 +9,15 @@
 ## Here are some images
 
 <p align="center">
-  <img width="460" height="300" src="https://github.com/anonimbiri/gartic.io-hack/blob/main/resimler/1.gif?raw=true">
+  <img src="https://github.com/anonimbiri/gartic.io-hack/blob/main/resimler/1.gif?raw=true">
 </p>
 
 <p align="center">
-  <img width="460" height="300" src="https://github.com/anonimbiri/gartic.io-hack/blob/main/resimler/2.gif?raw=true">
+  <img src="https://github.com/anonimbiri/gartic.io-hack/blob/main/resimler/2.gif?raw=true">
 </p>
 This image is a bit old (my first attempts)
 <p align="center">
-  <img width="460" height="300" src="https://github.com/anonimbiri/gartic.io-hack/blob/main/resimler/eski%20versiyon.gif?raw=true">
+  <img src="https://github.com/anonimbiri/gartic.io-hack/blob/main/resimler/eski%20versiyon.gif?raw=true">
 </p>
 
 ## Features
