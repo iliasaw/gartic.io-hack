@@ -353,7 +353,8 @@ if (!document.getElementById("sensinbu")){
                    // document.getElementsByClassName("mousetrap")[1].value=blacklist2 + yazılanmesaj;
                    console.log(yazılanmesaj.replace(seninnickin,"").replace(" ",""));
                   $('#kemlimelistesi button:contains(\''+yazılanmesaj.replace(seninnickin,"").replace(" ","")+'\')').css({"backgroundColor": "green","color": "white" });
-                   console.log(testi);
+                   $('#kemlimelistesi button:contains(\''+yazılanmesaj.replace(seninnickin,"").replace(" ","")+'\')').detach().appendTo("#kemlimelistesi");
+                  // console.log(testi);
 
                }
                 
