@@ -27,12 +27,19 @@
 # Releases
 | Gartic.io Mod Menu| Cheat Version | Github | Greasyfork |
 |----------------------------|-------------|-----------------|-----------------|
-| 2021 | v0.2 | [Download](https://raw.githubusercontent.com/anonimbiri/gartic.io-hack/main/script/gartic.io%20mod%20menu.js) | [Download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu) |
+| 2021 | v0.3 | [Download](https://raw.githubusercontent.com/anonimbiri/gartic.io-hack/main/script/gartic.io%20mod%20menu.js) | [Download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu) |
+| 2021 | v0.2 | Download | [Download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu/code?version=949820) |
 | 2021 | v0.1 | Download | [Download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu?version=949447) |
 
 <details>
   <summary> Changelog </summary>
   <details>
+  <summary> v0.3 </summary>
+  <ul> <li> Fixed page refresh issue when opening </li> </ul>
+    <ul> <li> image is not full size now it will be full size and right in the middle (drawing area) </li> </ul>
+     <ul> <li> New words have been added for the Turkish language, continuing to be added </li> </ul>
+      </details>
+   <details>
   <summary> v0.2 </summary>
   <ul> <li> if you click the button it will be red </li> </ul>
     <img src="https://i.imgur.com/i1uDZab.png">
