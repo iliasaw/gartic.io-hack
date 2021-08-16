@@ -5,7 +5,7 @@
 
 ## Here are some images
 
-![](./resimler/1.gif)
+![](./resimler/3.gif)
 ![](./resimler/2.gif)
 ![](./resimler/eski%20versiyon.gif)
 
