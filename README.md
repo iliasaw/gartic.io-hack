@@ -61,3 +61,10 @@
 **2. Go to ` extensions` and press add a new script.**\
 \
 **3. Save and enter the game.**
+
+    
+
+
+-----------------------
+## Disclaimer 
+This project is for Educational Use only. We do not condone this software being used to gain an advantage against other people.
