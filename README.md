@@ -35,7 +35,7 @@
   <summary> Changelog </summary>
   <details>
      <summary> v0.4 </summary>
-  <ul> <li> azerbaijan (no full words added yet) </li> </ul>
+  <ul> <li> azerbaijan language (no full words added yet) </li> </ul>
     <ul> <li> Fixed the issue of not being able to enter the room when changing rooms </li> </ul>
      <ul> <li> important note: I will work on the problem that the buttons do not appear on mobile, I will fix it soon </li> </ul>
       </details>
