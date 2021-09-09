@@ -34,6 +34,12 @@
 <details>
   <summary> Changelog </summary>
   <details>
+     <summary> v0.4 </summary>
+  <ul> <li> azerbaijan (no full words added yet) </li> </ul>
+    <ul> <li> Fixed the issue of not being able to enter the room when changing rooms </li> </ul>
+     <ul> <li> important note: I will work on the problem that the buttons do not appear on mobile, I will fix it soon </li> </ul>
+      </details>
+   <details>
   <summary> v0.3 </summary>
   <ul> <li> Fixed page refresh issue when opening </li> </ul>
     <ul> <li> image is not full size now it will be full size and right in the middle (drawing area) </li> </ul>
