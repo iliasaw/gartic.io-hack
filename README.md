@@ -27,7 +27,8 @@
 # Releases
 | Gartic.io Mod Menu| Cheat Version | Github | Greasyfork |
 |----------------------------|-------------|-----------------|-----------------|
-| 2021 | v0.4 | [Download](	https://github.com/anonimbiri/gartic.io-hack/raw/main/script/gartic.io%20mod%20menu.user.js) | [Download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu) |
+| 2021 | v0.5 | [Download](	https://github.com/anonimbiri/gartic.io-hack/raw/main/script/gartic.io%20mod%20menu.user.js) | [Download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu) |
+| 2021 | v0.4 | Download | [Download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu?version=969051) |
 | 2021 | v0.3 | Download | [Download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu?version=955577) |
 | 2021 | v0.2 | Download | [Download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu/code?version=949820) |
 | 2021 | v0.1 | Download | [Download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu?version=949447) |
@@ -35,6 +36,13 @@
 <details>
   <summary> Changelog </summary>
   <details>
+    <summary> v0.5 </summary>
+  <ul> <li> Auto Answer </li> </ul>
+    <ul> <li> menu interface language feature </li> </ul>
+     <ul> <li> menu interface fix </li> </ul>
+      <ul> <li> I added a small button for mobile, but it has not been tried, it may work stable </li> </ul>
+      </details>
+   <details>
      <summary> v0.4 </summary>
   <ul> <li> azerbaijan language (no full words added yet) </li> </ul>
     <ul> <li> Fixed the issue of not being able to enter the room when changing rooms </li> </ul>
