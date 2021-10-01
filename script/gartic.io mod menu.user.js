@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         gartic.io mod menu
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      0.5
 // @homepageURL  https://github.com/anonimbiri/gartic.io-hack
-// @supportURL   https://github.com/anonimbiri/gartic.io-hack
+// @supportURL   https://github.com/anonimbiri/gartic.io-hack/issues
 // @description  drawing assistant, answer assistant and many more features
 // @author       Anonim Biri
 // @require      http://code.jquery.com/jquery-3.3.1.min.js
@@ -11,6 +11,8 @@
 // @require      https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js
 // @require      https://cdnjs.cloudflare.com/ajax/libs/howler/1.1.29/howler.min.js
 // @icon         https://gartic.io/static/download/character.png
+// @updateURL 	 https://github.com/anonimbiri/gartic.io-hack/raw/main/script/gartic.io%20mod%20menu.user.js
+// @downloadURL  https://github.com/anonimbiri/gartic.io-hack/raw/main/script/gartic.io%20mod%20menu.user.js
 // @match        https://gartic.io/*
 // @grant    GM_setValue
 // @grant    GM_getValue
@@ -28,6 +30,8 @@ setTimeout(function() {
     var skipp = false;
     var renklicizim = false;
     var renklicizimms = 1000;
+    var autoanswer = false;
+    var autoanswerms = 1000;
     this.GM_getValue=function (key,def) {
         return localStorage[key] || def;
     };
@@ -50,38 +54,33 @@ GM_deleteValue("yenile");
 function lnkfunc(value) {
 
 }
-        var values = ["location=yes,scrollbars=yes,status=yes,height=570,width=520","location=yes,scrollbars=yes,status=yes,left=2000,height=570,width=520"];
-	values.sort(function(a, b){return 0.5 - Math.random()});
 
-    //LINKLER
-    var links = [""];
-	links.sort(function(a, b){return 0.5 - Math.random()});
-
-    //ozellikler
-    var fts = ["Auto Draw","Auto Guess","Random Words","Show Players","Draw Bot","Guess Bot","More Tools","Anti Lag","Anti Ads","Extra Points","Colorful Draws"];
-	fts.sort(function(a, b){return 0.5 - Math.random()});
-
-  this.st = {
-     yazı: "Cheat İnjected :)",
-     f1: "Anti AFK",
-     f5: "Oto Report",
-     f6: "Oto Skip",
-	 f7: "Oto kick",
-	 f8: "Key Sounds",
-     f9: "Speed",
-     f10: "Rainbow Drawing",
-     f2: "Zoom In/Out",
-     f3: "Rainbow BG",
-     f4: "Change BG",
-     string: "<a style=\"padding-right: 4px;\"></a> <font color=\"black\">—</font> <a style=\"padding-left: 4px;\"></a>",
-     bp: "padding-left: 2px;",
-	 os: "font-weight:bold;color:black;font-size:14px;text-decoration:none;",
-     os2: "color:black;font-size:11px;text-decoration:none;",
-     formstyle: "border:1px solid rgba(93,136,153,255);border-radius:20px;padding:5px;background-color: rgba(159,189,201,255);",
-     authorstyle: "border:1px solid black;border-radius:20px;padding:3px;width:200px;height:20px;font-size: 17px;text-align:center;background-color: 0, 106, 208;color:white;",
-     liststyler: "color:white;background-color: black;padding:3px;border-style:double;-webkit-box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.39);-moz-box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.39);box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.39);",
- };
-
+ document.addEventListener("keydown", e => {
+if (!document.querySelector("#popUp #modmenupopUp")){
+  if (e.key === "m" && e.ctrlKey) {
+    menu();
+  }else if (e.key === "M" && e.ctrlKey){
+   menu();
+  }}else{
+ if (e.key === "m" && e.ctrlKey) {
+    closemenu();
+  }else if (e.key === "M" && e.ctrlKey){
+   closemenu();
+  }
+  }
+});
+  this.lang = {
+     Cheat_İnjected: "Cheat İnjected :)",
+     Anti_AFK: "Anti AFK",
+     Auto_Report: "Auto Report",
+     Auto_Skip: "Auto Skip",
+	 Auto_kick: "Auto Kick",
+     Auto_Answer: "Auto Answer",
+	 Rainbow_Drawing: "Rainbow Drawing",
+     Disabled: "Disabled",
+     Enabled: "Enabled",
+     Github_source_code: "Github source code",
+};
 function menuns() {
      setTimeout(function() {
         javascript:(function loops(){
@@ -95,18 +94,22 @@ function menuns() {
 
     //general
 $('#modmenupopUp .content .contentPopup.info').append('<label class="select lang"><select name="language"><optgroup label="Languages"><option value="23">Azərbaycanca</option><option value="2">English</option><option value="8">Türkçe</option></optgroup></select></label>');
-$('.select.lang').on('change', 'select[name="language"]', function() { lang =document.querySelector('.select.lang select').value; console.log(lang);});
-$('#modmenupopUp .content .contentPopup.info').append('<div class="fieldset visibleRoom"><img src="https://i.imgur.com/iBPf50O.png" style="position:relative;top:33px;left:-155px;height:25px;"><span class="legend" style="position:relative;top:25px;left:-150px;">Anti AFK: </span><div class="switchFieldCheck" style="position:relative;left:150px;"><input type="checkbox" name="visible" id="afk"><label for="afk"></label></div></div>');
+$('.select.lang').on('change', 'select[name="language"]', function() { lang =document.querySelector('.select.lang select').value;});
+$('#modmenupopUp .content .contentPopup.info').append('<div class="fieldset visibleRoom" style="width: 100%; height: 40px;"><img src="https://i.imgur.com/iBPf50O.png" style="position:relative;top:7px;right:5px;height:25px;"><span class="legend">'+this.lang.Anti_AFK+': </span><div class="switchFieldCheck" style="float:right;"><input type="checkbox" name="visible" id="afk"><label for="afk"></label></div></div>');
 $('.switchFieldCheck').on('change', '#afk', function() { if(afkk==false) { afkk=true; $('.scrollElements:eq(1)').append('<div class="msg system">Anti AFK: <strong>Enabled</strong></div>'); }else{afkk=false; $('.scrollElements:eq(1)').append('<div class="msg system">Anti AFK: <strong>Disabled</strong></div>');} antiafk(); });
-$('#modmenupopUp .content .contentPopup.info').append('<div class="fieldset visibleRoom"><img src="https://i.imgur.com/HfLAgAS.png" style="position:relative;top:33px;left:-155px;height:25px;"><span class="legend" style="position:relative;top:25px;left:-150px;">Oto kick: </span><div class="switchFieldCheck" style="position:relative;left:150px;"><input type="checkbox" name="visible" id="otokick"><label for="otokick"></label></div></div>');
-$('.switchFieldCheck').on('change', '#otokick', function() { if(otokickk==false) { otokickk=true; $('.scrollElements:eq(1)').append('<div class="msg system">Oto kick: <strong>Enabled</strong></div>');}else{otokickk=false; $('.scrollElements:eq(1)').append('<div class="msg system">Oto kick: <strong>Disabled</strong></div>');} kicks(); });
-$('#modmenupopUp .content .contentPopup.info').append('<div class="fieldset visibleRoom"><img src="https://i.imgur.com/it44rZS.png" style="position:relative;top:33px;left:-155px;height:25px;"><span class="legend" style="position:relative;top:25px;left:-150px;">Oto Skip: </span><div class="switchFieldCheck" style="position:relative;left:150px;"><input type="checkbox" name="visible" id="otoskip"><label for="otoskip"></label></div></div>');
-$('.switchFieldCheck').on('change', '#otoskip', function() { if(skipp==false) { skipp=true;$('.scrollElements:eq(1)').append('<div class="msg system">Oto skip: <strong>Enabled</strong></div>');}else{skipp=false;$('.scrollElements:eq(1)').append('<div class="msg system">Oto skip: <strong>Disabled</strong></div>');} skip(); });
-$('#modmenupopUp .content .contentPopup.info').append('<div class="fieldset visibleRoom"><img src="https://i.imgur.com/VkvLxc0.png" style="position:relative;top:33px;left:-155px;height:25px;"><span class="legend" style="position:relative;top:25px;left:-150px;">Oto Report: </span><div class="switchFieldCheck" style="position:relative;left:150px;"><input type="checkbox" name="visible" id="otoreport"><label for="otoreport"></label></div></div>');
-$('.switchFieldCheck').on('change', '#otoreport', function() { if(reportt==false) { reportt=true; $('.scrollElements:eq(1)').append('<div class="msg system">Oto report: <strong>Enabled</strong></div>');}else{reportt=false; $('.scrollElements:eq(1)').append('<div class="msg system">Oto report: <strong>Disabled</strong></div>');} report(); });
-$('#modmenupopUp .content .contentPopup.info').append('<div class="Rainbow Drawing"><img src="https://i.imgur.com/MH34Z4h.png" style="position:relative;top:33px;left:-130px;height:25px;"><span class="legend" style="position:relative;top:25px;left:-120px;">Rainbow Drawing: </span><div class="switchFieldCheck" style="position:relative;left:150px;"><input type="checkbox" name="visible" id="renklicizimm"><label for="renklicizimm"></label></div><input name="renklicizimmms" id="renklicizimmms" type="number" style="position:relative;left:230px;top:-25px;width: 5em" max="100000" step="1" value="1000" class="renklicizimmms" oninput="amount.value=renklicizimmms.value;"></div>');
+$('#modmenupopUp .content .contentPopup.info').append('<div class="fieldset visibleRoom" style="width: 100%; height: 40px;"><img src="https://i.imgur.com/HfLAgAS.png" style="position:relative;top:7px;right:5px;height:25px;"><span class="legend">'+this.lang.Auto_kick+': </span><div class="switchFieldCheck" style="float:right;"><input type="checkbox" name="visible" id="otokick"><label for="otokick"></label></div></div>');
+$('.switchFieldCheck').on('change', '#otokick', function() { if(otokickk==false) { otokickk=true; $('.scrollElements:eq(1)').append('<div class="msg system">Auto kick: <strong>Enabled</strong></div>');}else{otokickk=false; $('.scrollElements:eq(1)').append('<div class="msg system">Auto kick: <strong>Disabled</strong></div>');} kicks(); });
+$('#modmenupopUp .content .contentPopup.info').append('<div class="fieldset visibleRoom" style="width: 100%; height: 40px;"><img src="https://i.imgur.com/it44rZS.png" style="position:relative;top:7px;right:5px;height:25px;"><span class="legend">'+this.lang.Auto_Skip+': </span><div class="switchFieldCheck" style="float:right;"><input type="checkbox" name="visible" id="otoskip"><label for="otoskip"></label></div></div>');
+$('.switchFieldCheck').on('change', '#otoskip', function() { if(skipp==false) { skipp=true;$('.scrollElements:eq(1)').append('<div class="msg system">Auto skip: <strong>Enabled</strong></div>');}else{skipp=false;$('.scrollElements:eq(1)').append('<div class="msg system">Auto skip: <strong>Disabled</strong></div>');} skip(); });
+$('#modmenupopUp .content .contentPopup.info').append('<div class="fieldset visibleRoom" style="width: 100%; height: 40px;"><img src="https://i.imgur.com/VkvLxc0.png" style="position:relative;top:7px;right:5px;height:25px;"><span class="legend">'+this.lang.Auto_Report+': </span><div class="switchFieldCheck" style="float:right;"><input type="checkbox" name="visible" id="otoreport"><label for="otoreport"></label></div></div>');
+$('.switchFieldCheck').on('change', '#otoreport', function() { if(reportt==false) { reportt=true; $('.scrollElements:eq(1)').append('<div class="msg system">Auto report: <strong>Enabled</strong></div>');}else{reportt=false; $('.scrollElements:eq(1)').append('<div class="msg system">Auto report: <strong>Disabled</strong></div>');} report(); });
+$('#modmenupopUp .content .contentPopup.info').append('<div class="Rainbow Drawing" style="width: 100%; height: 40px;"><img src="https://i.imgur.com/MH34Z4h.png" style="position:relative;top:7px;right:5px;height:25px;"><span class="legend">'+this.lang.Rainbow_Drawing+': </span><div class="switchFieldCheck" style="float:right;"><input type="checkbox" name="visible" id="renklicizimm"><label for="renklicizimm"></label></div><input name="renklicizimmms" id="renklicizimmms" type="number" style="position:relative;top:8px;float:right;right:5px; width: 20%;" max="100000" step="1" value="1000" class="renklicizimmms" oninput="amount.value=renklicizimmms.value;"></div>');
 $('.switchFieldCheck').on('change', '#renklicizimm', function() { if(renklicizim==false) { renklicizim=true; $('.scrollElements:eq(1)').append('<div class="msg system">Rainbow Drawing: <strong>Enabled</strong></div>'); }else{renklicizim=false; $('.scrollElements:eq(1)').append('<div class="msg system">Rainbow Drawing: <strong>Disabled</strong></div>');} rengareknkizim(); });
 $('.Rainbow.Drawing').on('change', '.renklicizimmms', function() { renklicizimms = document.querySelector('.renklicizimmms').value;});
+
+$('#modmenupopUp .content .contentPopup.info').append('<div class="Auto Answer" style="width: 100%; height: 40px;"><img src="https://i.imgur.com/ejCouCQ.png" style="position:relative;top:7px;right:5px;height:25px;"><span class="legend">'+this.lang.Auto_Answer+': </span><div class="switchFieldCheck" style="float:right;"><input type="checkbox" name="visible" id="autoanswerr"><label for="autoanswerr"></label></div><input name="renklicizimmms" id="renklicizimmms" type="number" style="position:relative;top:8px;float:right;right:5px; width: 20%;" max="100000" step="1" value="1000" class="autoanswerms" oninput="amount.value=autoanswerms.value;"></div>');
+$('.switchFieldCheck').on('change', '#autoanswerr', function() { if(autoanswer==false) { autoanswer=true; $('.scrollElements:eq(1)').append('<div class="msg system">Auto answer: <strong>Enabled</strong></div>'); }else{autoanswer=false; $('.scrollElements:eq(1)').append('<div class="msg system">Auto answer: <strong>Disabled</strong></div>');} autoanswerloop(); });
+$('.Auto.Answer').on('change', '.autoanswerms', function() { autoanswerms = document.querySelector('.autoanswerms').value;});
 
 
 //$('#option1').html('<a style="'+this.st.os+' target="blank">'+this.st.f1+'</a> <label style="'+this.st.bp+'" class=\'switch\'><input type=\'checkbox\' class="afk" ></label><div class="option2"></div>');
@@ -123,6 +126,52 @@ $('.Rainbow.Drawing').on('change', '.renklicizimmms', function() { renklicizimms
 //$('.option8').html('<a style="'+this.st.os+' target="blank">'+this.st.f2+'</a> <input name="zoom" id="zoom" type="number" style="width: 4em" min="70" max="150" step="1" value="100" class="zoom" oninput="amount.value=zoom.value;"> <a style="'+this.st.os2+' target="blank">(Min:70-Max:150)</a>');
 //$('.option8').on('input', '.zoom', function(e) { sendmesaj(); });
 //$('.list1').html('<div style="'+this.st.liststyler+'">'+text+'</div>');
+
+
+
+if (lang==8){
+this.lang.Cheat_İnjected = "Hile Enjekte Edildi :)";
+this.lang.Github_source_code = "Github kaynak kodu";
+this.lang.Anti_AFK = "AFK Engelleyici";
+this.lang.Auto_Report = "Otomatik Şikayet";
+this.lang.Auto_Skip = "Otomatik Geç";
+this.lang.Auto_kick = "Otomatik Oy At";
+this.lang.Auto_Answer = "Otomatik Bil";
+this.lang.Rainbow_Drawing = "Renkli Çizim";
+this.lang.Disabled = "Devre Dışı";
+this.lang.Enabled = "Etkin";
+
+}else if (lang==23){ //not: azerice çevirisi yapıp github adresime atabilir. google çeviriden çevrildi.... ve ek olarak en aşağıda bulunan azerice kelime listesi az olsa da eklenmeye çalışıldı eklemek isteyen varsa bana ulaşabilir.
+this.lang.Cheat_İnjected = "Hiylə enjekte edildi :)";
+this.lang.Github_source_code = "Github mənbə kodu";
+this.lang.Anti_AFK = "AFK bloker";
+this.lang.Auto_Report = "Avtomatik Şikayət";
+this.lang.Auto_Skip = "Avtomatik Atlama";
+this.lang.Auto_kick = "Avtomatik Səs";
+this.lang.Auto_Answer = "Avtomatik Bilmək";
+this.lang.Rainbow_Drawing = "Rəng Çəkmə";
+this.lang.Disabled = "Sifarişdən kənarda";
+this.lang.Enabled = "Effektiv";
+
+}
+else{
+this.lang.Cheat_İnjected = "Cheat İnjected :)";
+this.lang.Github_source_code = "Github source code";
+this.lang.Anti_AFK = "Anti AFK";
+this.lang.Auto_Report = "Auto Report";
+this.lang.Auto_Skip = "Auto Skip";
+this.lang.Auto_kick = "Auto Kick";
+this.lang.Auto_Answer = "Auto Answer";
+this.lang.Rainbow_Drawing = "Rainbow Drawing";
+this.lang.Disabled = "Disabled";
+this.lang.Enabled = "Enabled";
+
+}
+
+
+
+
+
                  if(document.querySelector('#afk'))
                  {
                      //document.querySelector('.afk').checked = afkk;
@@ -156,9 +205,17 @@ $('.Rainbow.Drawing').on('change', '.renklicizimmms', function() { renklicizimms
                  {
 
                  }
+                  if(document.querySelector('#autoanswerr'))
+                 {
+                     document.querySelector('#autoanswerr').checked = autoanswer;
+                 }
+                 if(document.querySelector('.autoanswerms'))
+                 {
+                     document.querySelector('.autoanswerms').value = autoanswerms;
+                 }
              }
              if (!document.getElementById("author")){
-           $('#screens header div .logo').append('<div style="'+this.st.authorstyle+'" id="author"></label>'+this.st.yazı+'<a style="'+this.st.os+'" class="author"></div>');
+           $('#screens header div .logo').append('<div style="border:1px solid black;border-radius:20px;padding:3px;width:200px;height:20px;font-size: 17px;text-align:center;background-color: 0, 106, 208;color:white;" id="author"></label>'+ this.lang.Cheat_İnjected +'<a style="font-weight:bold;color:black;font-size:14px;text-decoration:none;" class="author"></div>');
             }
               })()
             }, 0);
@@ -269,9 +326,25 @@ if (document.querySelector("#hint button")){
             })()
             }, 0);
     }
-
+function autoanswerloop() {
+    setTimeout(function() {
+        javascript:(function loops(){
+            autoanswerloop();
+if (document.getElementById("hint")){
+          let woldcolor =  $('#kemlimelistesi button:eq(0)').css("background-color");
+            if(woldcolor== "rgb(0, 128, 0)") {}else{
+             if(autoanswer==true) {
+                   let wold =  $('#kemlimelistesi button:eq(0)').text();
+                 sendmesaj(wold);
+             }
+            }
+}
+           })()
+            }, autoanswerms);
+    }
 
 }, 0);
+
 //let blacklist = "";
 let blacklist2 = "";
 let öncekiyazı = "";
@@ -323,19 +396,24 @@ let öncekiyazı = "";
                 }
             if (!document.getElementById("modmenu")){
                $('.game div:eq(2) div:eq(1)').prepend('<div id="trbuttontr4"></div>');
-              $('#trbuttontr4').prepend('<button id="modmenu" class="closing" ><img src="https://i.imgur.com/4Dk6c7r.png" style="width:25px;height:25px;" /><span class="tooltip">Mod Menu</span></button>');
+              $('#trbuttontr4').prepend('<button id="modmenu" class="closing" ><img src="https://i.imgur.com/4Dk6c7r.png" style="width:25px;height:25px;" /><span class="tooltip">Mod Menu (Ctrl + M)</span></button>');
                $('#trbuttontr4').on('click', '#modmenu', function() { menu(); });
                 }
              $('.content').on('click', '.close', function() { closemenu(); });
             if (!document.getElementById("uplatimage")){
                $('.game div:eq(2) div:eq(0)').append('<div id="4trbuttontr"></div>');
               $('#4trbuttontr').append('<button id="uplatimage" class="closing" ><img src="https://i.imgur.com/CU5Gjga.png" style="width:25px;height:25px;" /><span class="tooltip">Upload İmage From Clipboard</span></button>');
-               $('#4trbuttontr').on('click', '#uplatimage', function() { sendmesaj(); arakaplanyap(); });
+               $('#4trbuttontr').on('click', '#uplatimage', function() { arakaplanyap(); });
                 }
             if (!document.getElementById("odadegis")){
                $('.game div:eq(2) div:eq(0)').append('<div id="5trbuttontr"></div>');
               $('#5trbuttontr').append('<button id="odadegis" class="closing" ><img src="https://i.imgur.com/HZsuXxP.png" style="width:25px;height:25px;" /><span class="tooltip">Change Room</span></button>');
                $('#5trbuttontr').on('click', '#odadegis', function() { changeroom(); });
+                }
+//mobile menu open
+if (!document.querySelector(".Mobile.Mod.Menu")){
+              $('.actionsMobile').prepend('<button class="Mobile Mod Menu"><img src="https://i.imgur.com/JodxI35.png" style="width:25px;height:25px;" /></button>');
+               $('.actionsMobile').on('click', '.Mobile.Mod.Menu', function() { menu(); });
                 }
 if (!document.querySelector("#popUp .loading #loadingimage")){
  $('#popUp .loading').append('<div id="loadingimage"></div><img src="https://i.imgur.com/oXqL49V.gif" style="position:relative;left:11px;top:-100px;width:80px;height:80px;">');
@@ -412,7 +490,8 @@ if (!document.getElementById("sensinbu")){
             }
             }//  $('#gartic-io_160x600').append('<div style="border:1px solid rgba(93,136,153,255);border-radius:20px;20px;padding:5px;background-color: rgba(159,189,201,255);"><div class="option1"></div></div>');
        //  $('#ReloadWold').on('click', 'button', function() { processCurrentWord(); });
-         $('#kemlimelistesi').on('click', 'button', function() { var pasteText = document.querySelector('input[name="answer"]'); pasteText.focus(); document.execCommand('paste'); });
+         $('#kemlimelistesi').on('click', 'button', function() { var fired_button = $(this).text(); sendmesaj(fired_button); });
+        // $("#kemlimelistesi button").click(function () { var fired_button = $(this).text(); sendmesaj(fired_button); });
          }
 
           //  setTimeout(function() {
@@ -458,6 +537,7 @@ if (!document.getElementById("sensinbu")){
  }else{
 $('#cavapyardımcısı').remove();
 $('#kemlimelistesi').css({"display": "none"});
+    // clearWord();
  }
 
              })()
@@ -472,8 +552,8 @@ $('#kemlimelistesi').css({"display": "none"});
  function menu() {
  $('#popUp').css({"display": "block"});
  $('#popUp').append('<div id="modmenupopUp"></div>');
- $('#modmenupopUp').append('<div class="content"><button class="close"></button><div class="title"><h3>Mod Menu</h3></div><div class="contentPopup info"></div></div>');
-     $('#modmenupopUp .content').append('<a onclick="parent.open(\'https://github.com/anonimbiri/gartic.io-hack\');" style="cursor: pointer;position:relative;top:70px;width:290px;background-color: rgba(64, 120, 192);" class="loginGoogle"><img src="https://i.imgur.com/HVXUQfZ.png" style="position:relative;left:15px;width:25px;height:25px;"><span>Github source code</span></a>');
+ $('#modmenupopUp').append('<div class="content" style="position: absolute;"><button class="close"></button><div class="title"><h3>Mod Menu</h3></div><div class="contentPopup info"></div></div>');
+     $('#modmenupopUp .content').append('<a onclick="parent.open(\'https://github.com/anonimbiri/gartic.io-hack\');" style="cursor: pointer;position:relative;top:70px;width:290px;background-color: rgba(64, 120, 192);" class="loginGoogle"><img src="https://i.imgur.com/HVXUQfZ.png" style="position:relative;left:15px;width:25px;height:25px;"><span>'+ this.lang.Github_source_code +'</span></a>');
          setTimeout(function() {
          if(!document.querySelector('#modmenupopUp .content div #afk'))
                  {
@@ -487,7 +567,6 @@ function closemenu() {
 
 var backgroundimage = false;
  function arakaplanyap() {
-    // sendmesaj();
      if(backgroundimage === false){
          backgroundimage = true;
         // const clipboardItem = navigator.clipboard.read()
@@ -520,40 +599,29 @@ GM_setValue("yenile", "true");
 
      }, 1000);
 }
- function sendmesaj() {
-//var canvas = document.getElementById('exit');
-//canvas.requestPointerLock = canvas.requestPointerLock || canvas.mozRequestPointerLock || canvas.webkitRequestPointerLock;
-//canvas.requestPointerLock();
-     //document.getElementById("myText").defaultValue = "Goofy";
-     document.querySelector('input[name="chat"]').defaultValue = "Goofy";
- var pasteText = document.querySelector('input[name="chat"]');
-  pasteText.focus();
-      pasteText.value = "Goofy";
-      $("input[name='chat']").dxTextBox({
-        valueChangeEvent: "keyup"
-    });
-  //  var event = new Event('eventName', {bubbles: 'true'}); element.dispatchEvent(event);
-  //document.querySelector('input[name="chat"]').change();
- // document.getElementsByClassName("mousetrap")[1].value="deneme";
-//document.getElementsByClassName("mousetrap")[1].click();
-
-   //  setTimeout(function() {
-
-
-//var field = document.getElementsByClassName("mousetrap")
-//var field = document.querySelector('input[name="chat"]');
-//var keyEvent = document.createEvent("KeyboardEvent");
-//    keyEvent.initKeyEvent("keypress", true, true, null, false, false, false, false, 65, 0);
-//    field.dispatchEvent(keyEvent);
-// }, 10);
-
- //document.getElementsByClassName("mousetrap")[0].click();
- //       document.getElementsByClassName("mousetrap")[0].value="deneme";
- //       let send=document.getElementsByClassName("mousetrap")[0];
- //       send.setAttribute("mousetrap",false);
- //       send.click();
- //       $(".mousetrap > input[type='submit']").click();
-
+ function sendmesaj(word) {
+     if(word){
+let input = document.querySelector('input[name="answer"]');
+     if(input){
+let isinput = document.querySelector('input[name="answer"]').disabled;
+     if(isinput==false){
+let lastValue = input.value;
+input.value = word;
+let event = new Event('input', { bubbles: true });
+var event2 = new Event("submit", { bubbles: true });
+// hack React15
+event.simulated = true;
+event2.simulated = true;
+// hack React16 内部定义了descriptor拦截value，此处重置状态
+let tracker = input._valueTracker;
+if (tracker) {
+  tracker.setValue(lastValue);
+}
+input.dispatchEvent(event);
+input.form.dispatchEvent(event2);
+     }
+     }
+ }
  }
 //const currentWord = document.querySelector("#currentWord")
 //const observer = new MutationObserver(processCurrentWord)
@@ -563,7 +631,38 @@ const wordListtr =   ["elma","armut","sünger","köfte","el feneri","iğne","dai
 const wordListaz =   ["salat", "corab","cırcırama", "hörümçək", "ördək", "lampa", "əqrəb", "kitab", "şir", "yumurta", "meymun", "mətbəx", "bozbaş", "su", "fil", "kirpi", "sasiska", "bayraq", "plov", "gül", "feyxoa", "yemiş", "fındıq", "begamot", "soyuducu", "duz","inək", "dəniz atı", "telefon", "lupa", "timsah", "tovuzquşu", "kabab", "banan", "ayaqqabı", "gitara", "limon", "at", "maral", "əjdaha", "bayquş", "siçan" ,"roket", "ayran", "gilas"]
 let regex = /^$/
 let possibleWords = []
+/* let clearWordStop = false
+function clearWord() {
+   // if(autoanswer==true){
+    if(clearWordStop==true){
+        clearWordStop = false
+            let isinput = document.querySelector('input[name="answer"]').disabled;
+     if(isinput==true){
+         clearWordStop = true
+     clearWord();
+     }
+    $('#kemlimelistesi button').remove();
+    const container = document.querySelector("#kemlimelistesi")
+    if(lang == "8"){
+  possibleWords = wordListtr
+}else if(lang == "23"){
+      possibleWords = wordListaz
+    }else{
+    possibleWords = wordListen
+    }
+    for (let i = 0; i < possibleWords.length; i++) {
+    const button = document.createElement("button")
+    button.innerHTML = possibleWords[i];
+    button.setAttribute("onclick","navigator.clipboard.writeText('" + possibleWords[i] + "'); this.style.backgroundColor = 'red'; this.style.color = 'white';");
+    button.setAttribute("style", "margin-top:10px;font-size:100%;text-align:center;background-color:Grey;border-radius:8px;  min-width: 15ch;min-height: 20px;box-shadow:03px 5px rgba(0, 0, 0, 0.18);display:flex;");
+  //  button.addEventListener("click", selectWord)
+    container.appendChild(button)
+    }
+  }
+  //  }
+}*/
 function processCurrentWord() {
+   // clearWordStop = true
     $('#kemlimelistesi button').remove();
     var InputText1 = $('.word:eq(0)').html()
     var InputText2 = $('.word:eq(1)').html() || ""
