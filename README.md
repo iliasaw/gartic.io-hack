@@ -36,6 +36,10 @@
 <details>
   <summary> Changelog </summary>
   <details>
+     <summary> v0.6 </summary>
+  <ul> <li> There was a problem with booting fixed </li> </ul>
+      </details>
+   <details>
     <summary> v0.5 </summary>
   <ul> <li> Auto Answer </li> </ul>
     <ul> <li> menu interface language feature </li> </ul>
