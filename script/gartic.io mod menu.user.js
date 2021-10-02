@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         gartic.io mod menu
 // @namespace    http://tampermonkey.net/
-// @version      0.5
+// @version      0.6
 // @homepageURL  https://github.com/anonimbiri/gartic.io-hack
 // @supportURL   https://github.com/anonimbiri/gartic.io-hack/issues
 // @description  drawing assistant, answer assistant and many more features
@@ -47,8 +47,10 @@ setTimeout(function() {
     (async () => {
   let yenileme = await GM_getValue('yenile');
 if(yenileme === "true"){
+    setTimeout(function() {
 $(".btYellowBig.ic-playHome").click();
 GM_deleteValue("yenile");
+    }, 1000);
 }
 })();
 function lnkfunc(value) {
@@ -197,7 +199,7 @@ this.lang.Enabled = "Enabled";
                  {
                      document.querySelector('#otoskip').checked = skipp;
                  }
-                 if(document.querySelector('select[name="language"]'))
+                 if(document.querySelector('.contentPopup.info .select.lang select[name="language"]'))
                  {
                      document.querySelector('select[name="language"]').value = lang;
                  }
@@ -373,6 +375,10 @@ let öncekiyazı = "";
                 $('#trbuttontr').removeClass();
             }
             }
+//  if (!document.querySelector("#content")[1]){
+//     $('#content:eq(1)').remove();
+//  }
+
             //document.getElementById("info").className = '<button id="info"><span class="tooltip">Bilgi</span></button> <button id="close" class="closing" ><img src="https://i.imgur.com/laWPceN.png" /></button>';
      //$('#info').html('<button id="info"><span class="tooltip">Bilgi</span></button> <button id="close" class="closing" ><img src="https://i.imgur.com/laWPceN.png" /></button>');
      //$('#hint').html('<body><button type="button" onclick="alert("deneme")">Click Me!</button></body>');
@@ -541,7 +547,7 @@ $('#kemlimelistesi').css({"display": "none"});
  }
 
              })()
-            }, 0);
+            }, 100);
  }
 
  function copynickname() {
