@@ -1,13 +1,13 @@
 # gartic io drawing assistant, answer assistant and many more features
 
-![LOGO](./resimler/logo.png)
+![LOGO](./screenshots/logo.png)
 
 
 ## Here are some images
 
-![](./resimler/3.gif)
-![](./resimler/2.gif)
-![](./resimler/eski%20versiyon.gif)
+![](./screenshots/win.gif)
+![](./screenshots/draw.gif)
+![](./screenshots/rgb.gif)
 
 
 ## Features
