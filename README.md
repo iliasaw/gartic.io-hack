@@ -1,4 +1,5 @@
-# gartic io drawing assistant, answer assistant and many more features
+# gartic io drawing assistant, answer assistant and many more features [![YouTube](https://img.shields.io/youtube/channel/subscribers/UCgs8Nz3Msrl4GqX3DeOZ6tQ?style=flat-square)](https://www.youtube.com/channel/UCgs8Nz3Msrl4GqX3DeOZ6tQ) [![Downloads](https://img.shields.io/badge/downloads-1M-brightgreen?style=flat-square)](#releases)  
+
 
 ![LOGO](./screenshots/logo.png)
 
@@ -19,7 +20,6 @@
 - **Rainbow Drawing**
 - **Drawing Reporter**
 - **Username Copy**
-
 
 
 
