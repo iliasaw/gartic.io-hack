@@ -16,7 +16,7 @@
 		"Change_room": "Change Room",
 		"Upload_image_from_clipboard": "Upload İmage From Clipboard",
 		"Full_screen": "Full Screen",
-		"COPY_NİCKNAME":"COPY NİCKNAME"
+		"copy_nickname":"COPY NİCKNAME"
 	},
 	"world_list": ["salat", "corab","cırcırama", "hörümçək", "ördək", "lampa", "əqrəb", "kitab", "şir", "yumurta", "meymun", "mətbəx", "bozbaş", "su", "fil", "kirpi", "sasiska", "bayraq", "plov", "gül", "feyxoa", "yemiş", "fındıq", "begamot", "soyuducu", "duz","inək", "dəniz atı", "telefon", "lupa", "timsah", "tovuzquşu", "kabab", "banan", "ayaqqabı", "gitara", "limon", "at", "maral", "əjdaha", "bayquş", "siçan" ,"roket", "ayran", "gilas"]
 }
