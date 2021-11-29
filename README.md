@@ -27,7 +27,8 @@
 # Releases
 | Gartic.io Mod Menu| Cheat Version | Github | Greasyfork |
 |----------------------------|-------------|-----------------|-----------------|
-| 2021 | v0.7 | [Download](	https://github.com/anonimbiri/gartic.io-hack/raw/main/script/gartic.io%20mod%20menu.user.js) | [Download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu) |
+| 2021 | v0.8 | [Download](	https://github.com/anonimbiri/gartic.io-hack/raw/main/script/gartic.io%20mod%20menu.user.js) | [Download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu) | 
+| 2021 | v0.7 | [Download](	https://github.com/anonimbiri/gartic.io-hack/raw/main/script/other_versions/gartic.io%20mod%20menu%20v0.7.user.js) | [Download]( https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu?version=992526) |
 | 2021 | v0.6 | [Download](	https://github.com/anonimbiri/gartic.io-hack/raw/main/script/other_versions/gartic.io%20mod%20menu%20v0.6.user.js) | [Download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu?version=975745) |
 | 2021 | v0.5 | Download | [Download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu?version=975548) |
 | 2021 | v0.4 | Download | [Download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu?version=969051) |
@@ -38,6 +39,10 @@
 <details>
   <summary> Changelog </summary>
   <details>
+ <summary> v0.8 </summary>
+  <ul> <li> fixed foreign character problem (Arabic, Turkish, Azerbaijani) some words could not be detected in some languages fixed </li> </ul>
+      </details>
+   <details>
     <summary> v0.7 </summary>
   <ul> <li> added words for arabic (thank you to the friend who helped)  </li> </ul>
  <ul> <li> now the words will be pulled from github  </li> </ul>
