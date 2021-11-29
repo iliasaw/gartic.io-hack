@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         gartic.io mod menu
 // @namespace    http://tampermonkey.net/
-// @version      0.7
+// @version      0.8
 // @homepageURL  https://github.com/anonimbiri/gartic.io-hack
 // @supportURL   https://github.com/anonimbiri/gartic.io-hack/issues
 // @description  drawing assistant, answer assistant and many more features
@@ -716,38 +716,45 @@ function processCurrentWord() {
 //console.log("currWord: " + currWord);
     //const currWord = currentWord.innerHTML
 const container = document.querySelector("#kemlimelistesi")
-  let regexStr = "^"
- 
-  for (let i = 0; i < currWord.length; i++) {
-    const char = currWord[i]
- 
-    if (char === "_")
-      regexStr += "\\w"
-    else if (char === "." || char === "/")
-      regexStr += "\\" + char
-    else
-      regexStr += char
-  }
- 
-  regexStr += "$"
- 
-  regex = new RegExp(regexStr, "i")
-    possibleWords = Wordslist.filter(word => regex.test(word))
- 
-   // console.log(possibleWords);
-    for (let i = 0; i < possibleWords.length; i++) {
+
+    let sameLength = Wordslist.filter(w => {
+        return w.length === currWord.length;
+    })
+    let isAlphanumOrSpace = w => w.match(/^[a-z0-9 ]+$/i);
+    let found = sameLength.filter(w => {
+        let letters = w.split('');
+
+        let b = true;
+        for (let i = 0; i < currWord.length; i++) {
+            if (isAlphanumOrSpace(currWord[i]) && currWord[i] !== w[i]) b = false;
+        }
+        return b;
+    });
+ for (let i = 0; i < found.length; i++) {
     const button = document.createElement("button")
-    button.innerHTML = possibleWords[i];
-    button.setAttribute("onclick","navigator.clipboard.writeText('" + possibleWords[i] + "'); this.style.backgroundColor = 'red'; this.style.color = 'white';");
+    button.innerHTML = found[i];
+    button.setAttribute("onclick","navigator.clipboard.writeText('" + found[i] + "'); this.style.backgroundColor = 'red'; this.style.color = 'white';");
     button.setAttribute("style", "margin-top:10px;font-size:100%;text-align:center;background-color:Grey;border-radius:8px;  min-width: 15ch;min-height: 20px;box-shadow:03px 5px rgba(0, 0, 0, 0.18);display:flex;");
   //  button.addEventListener("click", selectWord)
     container.appendChild(button)
   }
+    return found;
+   // console.log(possibleWords);
     // $('#kemlimelistesi button').attr("style", "margin-top:10px;font-size:100%;text-align:center;background-color:Grey;border-radius:8px;  min-width: 15ch;min-height: 20px;box-shadow:03px 5px rgba(0, 0, 0, 0.18);display:flex;"); //
    // $('#kemlimelistesi').append('<button type="button" onclick="alert(\'Hello world!\')">' + possibleWords.push() + '</button>');
   //chrome.runtime.sendMessage({type: "updatePossibleWords", words: possibleWords})
 }
- 
+
+function drawImage(x,y) { //beta test
+let elem = document.querySelector('#events');
+var bcr=elem.getBoundingClientRect();
+            x+=bcr.left;
+            y+=bcr.top;
+            elem.dispatchEvent(new MouseEvent("mousedown",{bubbles:true,clientX:x,clientY:y,button:0}));
+            elem.dispatchEvent(new MouseEvent("mouseup",{bubbles:true,clientX:x,clientY:y,button:0}));
+            elem.dispatchEvent(new MouseEvent("click",{bubbles:true,clientX:x,clientY:y,button:0}));
+}
+
 function showfullscreen() {
 //Full screen
 document.fullscreenEnabled =
