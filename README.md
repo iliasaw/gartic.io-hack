@@ -97,11 +97,11 @@
 | ----------- | ------- |
 
 ## Installation Guide (Github)
-**1. first download the file to your `desktop`.**\
+**it's pretty simple to install**\
 \
-**2. Go to ` extensions` and press add a new script.**\
+**Press the `download` button that appears on the screen.**\
 \
-**3. Save and enter the game.**
+**Congratulations, you downloaded**
 
     
 
