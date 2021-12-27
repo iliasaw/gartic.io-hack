@@ -27,15 +27,15 @@
 # Releases
 | Gartic.io Mod Menu| Cheat Version | Github | Greasyfork |
 |----------------------------|-------------|-----------------|-----------------|
-| 2021 | v0.9 | [Download](	https://github.com/anonimbiri/gartic.io-hack/raw/main/script/gartic.io%20mod%20menu.user.js) | [Download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu) |
-| 2021 | v0.8 | [Download](	https://github.com/anonimbiri/gartic.io-hack/raw/main/script/other_versions/gartic.io%20mod%20menu%20v0.8.user.js) | [Download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu?version=992769) |
-| 2021 | v0.7 | [Download](	https://github.com/anonimbiri/gartic.io-hack/raw/main/script/other_versions/gartic.io%20mod%20menu%20v0.7.user.js) | [Download]( https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu?version=992526) |
-| 2021 | v0.6 | [Download](	https://github.com/anonimbiri/gartic.io-hack/raw/main/script/other_versions/gartic.io%20mod%20menu%20v0.6.user.js) | [Download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu?version=975745) |
-| 2021 | v0.5 | Download | [Download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu?version=975548) |
-| 2021 | v0.4 | Download | [Download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu?version=969051) |
-| 2021 | v0.3 | Download | [Download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu?version=955577) |
-| 2021 | v0.2 | Download | [Download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu/code?version=949820) |
-| 2021 | v0.1 | Download | [Download](https://greasyfork.org/tr/scripts/429227-gartic-io-mod-menu?version=949447) |
+| 2021 | v0.9 | [Download](	https://github.com/anonimbiri/gartic.io-hack/raw/main/script/gartic.io%20mod%20menu.user.js) | [Download](https://greasyfork.org/scripts/429227-gartic-io-mod-menu) |
+| 2021 | v0.8 | [Download](	https://github.com/anonimbiri/gartic.io-hack/raw/main/script/other_versions/gartic.io%20mod%20menu%20v0.8.user.js) | [Download](https://greasyfork.org/scripts/429227-gartic-io-mod-menu?version=992769) |
+| 2021 | v0.7 | [Download](	https://github.com/anonimbiri/gartic.io-hack/raw/main/script/other_versions/gartic.io%20mod%20menu%20v0.7.user.js) | [Download]( https://greasyfork.org/scripts/429227-gartic-io-mod-menu?version=992526) |
+| 2021 | v0.6 | [Download](	https://github.com/anonimbiri/gartic.io-hack/raw/main/script/other_versions/gartic.io%20mod%20menu%20v0.6.user.js) | [Download](https://greasyfork.org/scripts/429227-gartic-io-mod-menu?version=975745) |
+| 2021 | v0.5 | Download | [Download](https://greasyfork.org/scripts/429227-gartic-io-mod-menu?version=975548) |
+| 2021 | v0.4 | Download | [Download](https://greasyfork.org/scripts/429227-gartic-io-mod-menu?version=969051) |
+| 2021 | v0.3 | Download | [Download](https://greasyfork.org/scripts/429227-gartic-io-mod-menu?version=955577) |
+| 2021 | v0.2 | Download | [Download](https://greasyfork.org/scripts/429227-gartic-io-mod-menu/code?version=949820) |
+| 2021 | v0.1 | Download | [Download](https://greasyfork.org/scripts/429227-gartic-io-mod-menu?version=949447) |
 
 <details>
   <summary> Changelog </summary>
