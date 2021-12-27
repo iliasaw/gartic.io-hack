@@ -96,7 +96,7 @@
 | Tampermonkey  | [Download](https://www.tampermonkey.net) |
 | ----------- | ------- |
 
-## Installation Guide (Github)
+## Installation Guide
 **it's pretty simple to install**\
 \
 **Press the `download` button that appears on the screen.**\
