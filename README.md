@@ -34,7 +34,7 @@
 | 2021 | v0.5 | Download | [Download](https://greasyfork.org/scripts/429227-gartic-io-mod-menu?version=975548) |
 | 2021 | v0.4 | Download | [Download](https://greasyfork.org/scripts/429227-gartic-io-mod-menu?version=969051) |
 | 2021 | v0.3 | Download | [Download](https://greasyfork.org/scripts/429227-gartic-io-mod-menu?version=955577) |
-| 2021 | v0.2 | Download | [Download](https://greasyfork.org/scripts/429227-gartic-io-mod-menu/code?version=949820) |
+| 2021 | v0.2 | Download | [Download](https://greasyfork.org/scripts/429227-gartic-io-mod-menu/?version=949820) |
 | 2021 | v0.1 | Download | [Download](https://greasyfork.org/scripts/429227-gartic-io-mod-menu?version=949447) |
 
 <details>
