@@ -93,7 +93,8 @@
 -----------------------
 # Installation
 ## Requirements 
-- tampermonkey [Download](https://www.tampermonkey.net "click to download")
+| Tampermonkey  | <a href="https://www.tampermonkey.net" target="_blank">Download</a> |
+| ----------- | ------- |
 
 ## Installation Guide (Github)
 **1. first download the file to your `desktop`.**\
