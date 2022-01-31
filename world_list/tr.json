@@ -17,7 +17,8 @@
     "Full_screen": "Tam Ekran",
     "copy_nickname": "KULLANICI ADINI KOPYALA",
     "search": "Ara",
-    "ok": "Tamam"
+    "ok": "Tamam",
+    "draw_the_image":"Görseli çiz"
   },
   "world_list": [
     "elma",
