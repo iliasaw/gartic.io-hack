@@ -10,7 +10,7 @@
 ![](./screenshots/draw.gif)
 ![](./screenshots/rgb.gif)
 
-
+Press <kbd>CTRL</kbd>**+**<kbd>M</kbd> to open the menu.
 ## Features
 
 - **Drawing Assistant**
